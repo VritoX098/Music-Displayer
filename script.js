@@ -22,31 +22,31 @@
   const tracks = [
     {
       title: "TRACK TITLE ONE",              // ← replace: song title
-      description: "One short line describing the mood or idea behind the track.", // ← replace
-      genre: "Electronic",                    // ← replace: genre label
+      description: "My first song", // ← replace
+      genre: "Drum",                    // ← replace: genre label
       year: "2026",                           // ← replace: release year
-      audioFile: "audio/song-1.mp3",          // ← replace: path to local audio file
-      audioUrl: "https://example.com/song-1", // ← replace: external listen link (e.g. SoundCloud, Bandcamp)
-      strudelUrl: "https://strudel.cc/#REPLACE_WITH_CODE_LINK_1" // ← replace: Strudel code link
+      audioFile: "Songs/First-Song.wav",          // ← replace: path to local audio file
+      audioUrl: "https://cdn.hackclub.com/01a04e36-f704-71b0-82c3-d607f317fa8f/aria-song_audio.mp4", // ← replace: external listen link (e.g. SoundCloud, Bandcamp)
+      strudelUrl: "https://strudel.cc/#c2V0Y3BtKDExNS80KQoKYXJyYW5nZSgKICBbNSwgCiAgICBub3RlKCI8W2MyIGMzXSo0IFtiYjEgYmIyXSo0IFtmMiBmM10qNCBbZWIyIGViM10qND4iKQogICAgICAuc291bmQoImdtX3N5bnRoX2Jhc3NfMSIpCiAgICAgIC5scGYoODAwKS5fcGlhbm9yb2xsKHsgbGFiZWxzOiAxIH0pCiAgXSwKCiAgWzIwLCBzdGFjaygKICAgIHNvdW5kKCJiZCBiZCBzZCBoaCBiZCBjcCBzZCBoaCIpLAogICAgc291bmQoIm1ldGFsIH4gamF6eiBqYXp6OjEiKSwKICAgIG4oIjAgMSA0IDIiKS5zb3VuZCgiamF6eiIpLAogICAgc291bmQoYAogICAgICA8YmQqNCwgbHQqMiwgYmQqMiwgYmQqNCwgbHQqMiwgYmQqMj4KICAgICAgPGJkKjIsIGx0LCBtdCwgYmQqMiwgbHQsIGJkKjIsIGx0LCBtdCwgYmQqMiwgbHQ%2BCiAgICAgIDxiZCo0LCBsdCo0LCBiZCo0LCBsdCo0PgogICAgICA8YmQqMiwgbHQqMiwgbXQqMiwgYmQqMiwgYmQqMiwgbHQqMiwgbXQqMiwgYmQqMj4KICAgIGApLmJhbmsoIlJvbGFuZFRSODA4IiksCiAgICBzKCJoaCoxNiIpLmdhaW4oIlsuMjUgMV0qNCIpLAogICAgc291bmQoImJkKjQsIFstIGNwXSoyLCBbLSBoaF0qNCIpLmJhbmsoIlJvbGFuZFRSOTA5IiksCiAgICBzb3VuZCgiYmQgc2QsIC0gLSAtIGhoIC0gaGggLSAtLCAtIHBlcmMgLSBwZXJjOjEqMiIpCiAgICAgIC5iYW5rKCJSb2xhbmRDb21wdXJoeXRobTEwMDAiKSwKICAgIHNvdW5kKCJiZCo0LCBbfiA8c2QgY3A%2BXSoyLCBbfiBoaF0qNCIpLmJhbmsoIlJvbGFuZFRSOTA5IikKICApXSwKCiAgWzgsIAogICAgbigiMCAxIFs0IDNdIDIgMCAyIFt%2BIDNdIDQiKS5zb3VuZCgiamF6eiIpLnJldigpLnNsb3coMikuX3BpYW5vcm9sbCgpCiAgXQopCg%3D%3D" // ← replace: Strudel code link
     },
     {
       title: "TRACK TITLE TWO",               // ← replace: song title
-      description: "One short line describing the mood or idea behind the track.", // ← replace
-      genre: "Experimental",                  // ← replace: genre label
+      description: "My second song", // ← replace
+      genre: "Clam",                  // ← replace: genre label
       year: "2026",                           // ← replace: release year
-      audioFile: "audio/song-2.mp3",          // ← replace: path to local audio file
-      audioUrl: "https://example.com/song-2", // ← replace: external listen link
-      strudelUrl: "https://strudel.cc/#REPLACE_WITH_CODE_LINK_2" // ← replace: Strudel code link
+      audioFile: "Songs/Second-Song.wav",          // ← replace: path to local audio file
+      audioUrl: "https://user-cdn.hackclub-assets.com/01a05d4a-edfd-710d-9b1e-960a0a793dde/my_strudel_song_audio.mp4", // ← replace: external listen link
+      strudelUrl: "https://strudel.cc/#Ly8gUHJlYmFrZSBzY3JpcHQKLy8KLy8gVGhpcyBpcyBjb2RlIHRoYXQgaXMgbG9hZGVkIGJlZm9yZSB5b3VyIHBhdHRlcm4gaXMgcnVuLgovLyBZb3UgY2FuIHVzZSBpdCB0byBkZWZpbmUgY3VzdG9tIGZ1bmN0aW9ucyB0byB1c2UgaW4gYW55IHBhdHRlcm4uCi8vIAovLyBUaGlzIGlzIGFuIGluaXRpYWwgZXhhbXBsZSBzY3JpcHQuIFlvdSBjYW4gZWRpdCBpdCB0byBhZGQgCi8vIHlvdXIgb3duIGZ1bnRpb25zLgovLwovLyBUbyB1c2UgYSBzY3JpcHQgc2hhcmVkIGJ5IHNvbWUgb3RoZXIgdXNlciB5b3UgY2FuIHVzZQovLyB0aGUgaW1wb3J0LWJ1dHRvbiBvciBwYXN0ZSB0aGUgc2NyaXB0IGluIHRoaXMgZWRpdG9yLgoKY29uc3QgcmF0Y2hldCA9IHJlZ2lzdGVyKCdyYXRjaGV0JywgKHBhdCkgPT4gcGF0LnNvbWV0aW1lcyhwbHkoMikpKQoKc2V0Y3BtKDExNS80KQoKYXJyYW5nZSgKICAvLyBJbnRybyAofjEwcykKICBbNSwgc3RhY2soCiAgICAiMCwyLFs3IDZdIgogICAgICAuYWRkKCI8MCAxIDIgMyA0IDUgNyA4PiIpCiAgICAgIC5zY2FsZSgnQyBiZWJvcCBtYWpvcicpCiAgICAgIC50cmFuc3Bvc2UoIjwwIDEgMiAxPi84IikKICAgICAgLnNsb3coMikKICAgICAgLm5vdGUoKS5waWFubygpCiAgICAgIC5jb2xvcignIzAwQjhENCcpCiAgICAgIC5fcGlhbm9yb2xsKCksCgogICAgbm90ZSgiYzMgZTMgZzMgYjMiLmFkZCgiPDAgMiA0IDUgNz4iKSkKICAgICAgLnNvdW5kKCJwaWFubyIpCiAgICAgIC5scGYoc2F3LnJhbmdlKDgwMCwgNDAwMCkpCiAgICAgIC5fcGlhbm9yb2xsKCksCgogICAgc291bmQoImJkIFt%2BIHNkXSBoaCo0IikKICAgICAgLmJhbmsoIlJvbGFuZFRSOTA5IikKICAgICAgLnJldigpCiAgICAgIC5zcGVlZCgtMikKICAgICAgLmxwZig2MDApCiAgICAgIC5nYWluKC40KQogICldLAoKICAvLyBNaWRkbGUgcGFydCAxICh%2BMjBzKQogIFsxMCwgc3RhY2soCiAgICBzb3VuZCgiYmQqMiwgaGgqMiBbaGggb2hdIiksCgogICAgbm90ZSgiYzIgZzIgZDMgYTMiKQogICAgICAuc291bmQoInNhd3Rvb3RoIikKICAgICAgLmxwZig0MDApCiAgICAgIC5yb29tKDEpCiAgICAgIC5kZWxheSguOCkKICAgICAgLnNsb3coNCkKICAgICAgLmdhaW4oLjYpCiAgICAgIC5fcGlhbm9yb2xsKCksCgogICAgc291bmQoImJkIFt%2BIHNkXSBoaCo0IikKICAgICAgLmJhbmsoIlJvbGFuZFRSOTA5IikKICAgICAgLnJldigpCiAgICAgIC5zcGVlZCgtMikKICAgICAgLmxwZig2MDApCiAgICAgIC5nYWluKC40KQogICAgLl9waWFub3JvbGwoKQogICldLAoKICAvLyBNaWRkbGUgcGFydCAyICh%2BMjBzKQogIFsxMCwgc3RhY2soCiAgICBzb3VuZCgiYmQgW34gc2RdIGhoKjQiKS5iYW5rKCJSb2xhbmRUUjkwOSIpLAoKICAgIHNvdW5kKCJiZCBbfiBzZF0gaGgqNCIpCiAgICAgIC5iYW5rKCJSb2xhbmRUUjkwOSIpCiAgICAgIC5yZXYoKQogICAgICAuc3BlZWQoLTIpCiAgICAgIC5scGYoNjAwKQogICAgICAuZ2FpbiguNCksCgogICAgbm90ZSgiYzIgZzIgZDMgYTMiKQogICAgICAuc291bmQoInNhd3Rvb3RoIikKICAgICAgLmxwZig0MDApCiAgICAgIC5yb29tKDEpCiAgICAgIC5kZWxheSguOCkKICAgICAgLnNsb3coNCkKICAgICAgLmdhaW4oLjYpCiAgICAgIC5fcGlhbm9yb2xsKCkKICApXSwKCiAgLy8gRW5kaW5nICh%2BNXMpCiAgWzMsCiAgICBzb3VuZCgiYmQgW34gc2RdIGhoKjQiKQogICAgICAuYmFuaygiUm9sYW5kVFI5MDkiKQogICAgICAucmV2KCkKICAgICAgLnNwZWVkKC0yKQogICAgICAubHBmKDYwMCkKICAgICAgLmdhaW4oLjQpCiAgXQopCg%3D%3D" // ← replace: Strudel code link
     }
   ];
 
   // Replace each URL below with your real profile links.
   // Leaving a value as "#" will render the link but it won't go anywhere.
   const socialLinks = {
-    Facebook:  "#", // ← replace with Facebook URL
-    Instagram: "#", // ← replace with Instagram URL
-    YouTube:   "#", // ← replace with YouTube URL
-    GitHub:    "#"  // ← replace with GitHub URL
+    Facebook:  "https://www.facebook.com/bishwo.gyawali.2025", // ← replace with Facebook URL
+    Instagram: "https://www.instagram.com/bishow_gyawali/", // ← replace with Instagram URL
+    YouTube:   "https://www.youtube.com/@pramiskunwar", // ← replace with YouTube URL
+    GitHub:    "https://github.com/VritoX098"  // ← replace with GitHub URL
   };
 
   /* ========================================================================
