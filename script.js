@@ -6,10 +6,10 @@
      ============================================================ */
   const songs = [
     {
-      id: '808-bass-journey',
-      title: '808 Bass Journey',
+      id: 'My first strudel song',
+      title: 'My first strudel song',
       artist: 'Strudel Live Coder',
-      audio: 'your-song.mp3',
+      audio: 'Songs/My strudel song.wav',
       artwork: null, // or 'artwork.jpg'
       sections: [
         { name: 'Bass', start: null },
@@ -19,17 +19,17 @@
       ]
     }
     // Add more songs here:
-    // {
-    //   id: 'second-track',
-    //   title: 'Second Track',
-    //   artist: 'Strudel Live Coder',
-    //   audio: 'second.mp3',
-    //   artwork: null,
-    //   sections: [
-    //     { name: 'Intro', start: null },
-    //     { name: 'Verse', start: null }
-    //   ]
-    // }
+    {
+      id: 'second-track',
+      title: 'Second Track',
+      artist: 'Strudel Live Coder',
+      audio: 'Songs/Aria-Song.wav',
+      artwork: null,
+      sections: [
+        { name: 'Intro', start: null },
+        { name: 'Verse', start: null }
+      ]
+    }
   ];
 
   /* ============================================================
