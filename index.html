@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA · Original Music</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" role="banner">
+        <span class="logo">ARIA</span>
+        <span class="header-sub">Original Music</span>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content" role="main">
+
+        <!-- ---- PLAYER ---- -->
+        <section class="player-section" aria-label="Music player">
+
+            <!-- Vinyl -->
+            <div class="vinyl-column">
+                <div class="vinyl-wrapper" id="vinylWrapper">
+                    <div class="vinyl-record" id="vinylRecord" role="img" aria-label="Vinyl record">
+                        <!-- Grooves rendered via CSS -->
+                        <div class="vinyl-grooves"></div>
+                        <!-- Center label -->
+                        <div class="vinyl-center-label" id="vinylLabel">
+                            <div class="label-content" id="labelContent">
+                                <!-- Filled by JS -->
+                            </div>
+                        </div>
+                        <!-- Center hole -->
+                        <div class="center-hole"></div>
+                        <!-- Subtle reflection highlight -->
+                        <div class="vinyl-highlight"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info & controls -->
+            <div class="info-column">
+                <!-- Song metadata -->
+                <div class="song-meta">
+                    <h1 class="song-title" id="songTitle">808 Bass Journey</h1>
+                    <p class="song-artist" id="songArtist">Strudel Live Coder</p>
+                </div>
+
+                <!-- Sections -->
+                <div class="sections-container" id="sectionsContainer" role="list" aria-label="Song sections">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Progress -->
+                <div class="progress-area">
+                    <div class="progress-row">
+                        <span class="time-current" id="timeCurrent" aria-label="Current time">0:00</span>
+                        <div class="progress-track" id="progressTrack" role="slider" aria-label="Seek slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                            <div class="progress-handle" id="progressHandle" style="left: 0%;"></div>
+                        </div>
+                        <span class="time-duration" id="timeDuration" aria-label="Total duration">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls-row">
+                    <button class="ctrl-btn ctrl-prev" id="prevBtn" aria-label="Previous track" title="Previous track">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 19 4 12 11 5"/><polyline points="20 19 13 12 20 5"/></svg>
+                    </button>
+                    <button class="ctrl-btn ctrl-play" id="playBtn" aria-label="Play" title="Play / Pause">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                    </button>
+                    <button class="ctrl-btn ctrl-next" id="nextBtn" aria-label="Next track" title="Next track">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 19 11 12 4 5"/><polyline points="13 19 20 12 13 5"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---- LIBRARY ---- -->
+        <section class="library-section" aria-label="Track library">
+            <div class="library-header" id="libraryHeader" role="button" tabindex="0" aria-expanded="false" aria-controls="libraryList">
+                <span class="library-title">Tracks</span>
+                <span class="library-count" id="libraryCount">1 song</span>
+                <span class="library-toggle" id="libraryToggle" aria-hidden="true">▸</span>
+            </div>
+            <div class="library-list" id="libraryList" role="list" aria-label="Available tracks">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+        <a href="https://aria.hackclub.com" target="_blank" rel="noopener noreferrer">aria.hackclub.com</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
