@@ -1,172 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bishow Gyawali — Music made with code</title>
-<meta name="description" content="Bishow Gyawali — an independent collection of tracks composed and performed with Strudel, a live-coding music environment.">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bishow Gyawali — little sounds made with code</title>
+  <meta name="description" content="Bishow Gyawali makes small experimental songs with code using Strudel. Listen to the tracks and peek at the code behind them." />
+  <meta property="og:title" content="Bishow Gyawali — little sounds made with code" />
+  <meta property="og:description" content="Small experimental songs made with Strudel. Listen, and peek at the code." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#f6f5f1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#music">Skip to music</a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="wordmark" href="#top">Bishow Gyawali</a>
-
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Bishow Gyawali — home">
+      <span class="brand__dot" aria-hidden="true"></span>
+      bishow<span class="brand__thin">.gyawali</span>
+    </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="#music">Music</a>
-      <a href="#about">About</a>
-      <a href="#links">Links</a>
+      <a href="#music">music</a>
+      <a href="#strudel">strudel</a>
+      <a href="#about">about</a>
+      <a href="#links">links</a>
     </nav>
+  </header>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <main id="top">
 
-  <nav class="mobile-nav" id="mobileNav" aria-label="Primary, mobile">
-    <a href="#music">Music</a>
-    <a href="#about">About</a>
-    <a href="#links">Links</a>
-  </nav>
-</header>
+    <!-- ==========================================================
+         HERO
+    ========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero__eyebrow">
+        <span aria-hidden="true">✦</span> a small digital home <span aria-hidden="true">✦</span>
+      </p>
 
-<main id="main">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <p class="eyebrow">Independent artist · Live-coded music</p>
-      <h1 class="hero-title">
-        Bishow<br>Gyawali
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__name">Bishow</span>
+        <span class="hero__name hero__name--last">Gyawali</span>
       </h1>
-      <p class="hero-sub">
-        A small, ongoing collection of tracks written and performed
-        entirely as code, in real time, using
-        <a class="inline-link" href="https://strudel.cc" target="_blank" rel="noopener">Strudel</a>.
+
+      <p class="hero__tagline">
+        <em>little sounds</em><br />
+        made with code <span class="heart" aria-hidden="true">♡</span>
       </p>
-      <a class="btn btn-primary" href="#music">Listen to the collection</a>
-    </div>
-    <div class="hero-line" aria-hidden="true">
-      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" id="heroLine">
-        <path d="M0,30 L1200,30" />
-      </svg>
-    </div>
-  </section>
 
-  <!-- ============ MUSIC ============ -->
-  <section class="music" id="music">
-    <div class="section-inner">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <p class="section-note">Two tracks. Written in Strudel, mixed down, and released here as-is.</p>
-      </div>
-
-      <div class="track-list" id="trackList">
-        <!-- Track rows are rendered by script.js from the `tracks` array -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PLAYER (persistent) ============ -->
-  <div class="player" id="player" aria-live="polite">
-    <div class="player-inner">
-
-      <div class="player-track-info">
-        <span class="player-index" id="playerIndex">—</span>
-        <div class="player-titles">
-          <p class="player-title" id="playerTitle">Nothing playing</p>
-          <p class="player-genre" id="playerGenre">Select a track below</p>
-        </div>
-      </div>
-
-      <div class="player-controls">
-        <button class="player-btn player-play" id="playBtn" aria-label="Play">
-          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-        </button>
-
-        <div class="player-progress-wrap">
-          <span class="player-time" id="currentTime">0:00</span>
-          <input type="range" class="player-progress" id="progressBar" value="0" min="0" max="100" step="0.1"
-                 aria-label="Seek">
-          <span class="player-time" id="durationTime">0:00</span>
-        </div>
-      </div>
-
-      <div class="player-volume-wrap">
-        <button class="player-btn player-mute" id="muteBtn" aria-label="Mute">
-          <svg class="icon-vol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z"/></svg>
-        </button>
-        <input type="range" class="player-volume" id="volumeBar" value="80" min="0" max="100" step="1"
-               aria-label="Volume">
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ============ MUSIC / CODE ============ -->
-  <section class="code-note">
-    <div class="section-inner code-note-inner">
-      <p class="eyebrow">Music / code</p>
-      <p class="code-note-text">
-        These tracks are written in Strudel, a live-coding environment
-        for pattern-based music. Every track began as a page of code —
-        rhythm, melody and structure typed out and performed rather than
-        recorded in the usual sense.
-      </p>
-      <a class="btn btn-ghost" href="https://strudel.cc" target="_blank" rel="noopener">
-        Explore Strudel <span aria-hidden="true">↗</span>
+      <a href="#music" class="btn-listen">
+        <span class="btn-listen__bracket" aria-hidden="true">[</span>
+        listen <span class="btn-listen__arrow" aria-hidden="true">↓</span>
+        <span class="btn-listen__bracket" aria-hidden="true">]</span>
       </a>
-    </div>
-  </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="section-inner about-inner">
-      <h2>About</h2>
-      <!--
-        PLACEHOLDER COPY — replace with a real bio.
-        Keep it short: 2–4 sentences is plenty.
-      -->
-      <p>
-        Bishow Gyawali is an independent musician working at the edge of
-        composition and code. This site collects a small, evolving body
-        of work made with Strudel — music sketched, patterned and
-        performed live through text rather than a traditional studio setup.
-      </p>
-      <p>
-        More tracks are added here as they're finished. Thanks for listening.
-      </p>
-    </div>
-  </section>
+      <!-- tiny decorative bits -->
+      <span class="deco deco--note" aria-hidden="true">♪</span>
+      <span class="deco deco--ring" aria-hidden="true"></span>
+      <span class="deco deco--dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    </section>
 
-  <!-- ============ LINKS ============ -->
-  <section class="links" id="links">
-    <div class="section-inner">
-      <h2>Elsewhere</h2>
-      <ul class="link-list" id="socialLinks">
-        <!-- Rendered by script.js from the `socialLinks` object -->
+    <!-- ==========================================================
+         MUSIC — track list is rendered by script.js
+    ========================================================== -->
+    <section class="section music" id="music" aria-labelledby="music-title">
+      <div class="section__head">
+        <h2 id="music-title" class="section__title">Songs</h2>
+        <p class="section__meta"><span id="track-count">0</span> tracks · 2026 · no artwork, on purpose</p>
+      </div>
+
+      <ol class="tracklist" id="tracklist" aria-label="Track list">
+        <!-- Tracks are injected here from the TRACKS array in script.js -->
+      </ol>
+    </section>
+
+    <!-- ==========================================================
+         STRUDEL
+    ========================================================== -->
+    <section class="section strudel" id="strudel" aria-labelledby="strudel-title">
+      <div class="strudel__card">
+        <p class="strudel__mark" aria-hidden="true">made with code ♡</p>
+        <h2 id="strudel-title" class="strudel__title">
+          Every song here is a<br /><em>tiny program.</em>
+        </h2>
+        <p class="strudel__text">
+          I write these songs as patterns in
+          <a href="https://strudel.cc" target="_blank" rel="noopener noreferrer">Strudel<span aria-hidden="true"> ↗</span></a>,
+          a live-coding environment for music in the browser. No DAW, no timeline — just
+          text that turns into rhythm. Each track above has a link to its code, so you
+          can open it, press play, and break it however you like.
+        </p>
+        <p class="strudel__snippet" aria-hidden="true">
+          <span>sound("bd sd hh")</span><span class="cursor"></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         ABOUT
+    ========================================================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about__grid">
+        <div class="about__side">
+          <h2 id="about-title" class="section__title">About</h2>
+          <div class="about__portrait" aria-hidden="true">
+            <!-- a little placeholder "portrait" made of shapes, not a photo -->
+            <span class="about__circle"></span>
+            <span class="about__line"></span>
+            <span class="about__line about__line--short"></span>
+          </div>
+        </div>
+        <div class="about__body">
+          <!-- ✏️ REPLACE: placeholder bio — write your own in your own voice -->
+          <p class="about__lead">
+            Hi, I’m Bishow. I make small songs by typing.
+          </p>
+          <p>
+            This is a quiet corner of the internet where I keep the things I make
+            with Strudel — drum loops that got out of hand, little melodies that
+            started as one line of code. Nothing here is finished. That’s kind of the point.
+          </p>
+          <p>
+            More songs soon. Probably. <span aria-hidden="true">♪</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         LINKS — rendered from SOCIALS in script.js
+    ========================================================== -->
+    <section class="section links" id="links" aria-labelledby="links-title">
+      <h2 id="links-title" class="section__title">Find me</h2>
+      <ul class="social-list" id="social-list" aria-label="Social profiles">
+        <!-- Links are injected here from the SOCIALS array in script.js -->
       </ul>
-    </div>
-  </section>
+    </section>
 
-</main>
+  </main>
 
-<footer class="site-footer">
-  <div class="section-inner footer-inner">
-    <div class="footer-brand">
-      <p class="footer-name">Bishow Gyawali</p>
-      <p class="footer-tag">Music made with code.</p>
-    </div>
-    <p class="footer-meta">© <span id="year">2026</span> Bishow Gyawali. All rights reserved.</p>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Bishow Gyawali</p>
+    <p class="site-footer__note">made with code, coffee &amp; <span aria-hidden="true">♡</span><span class="sr-only">love</span></p>
+    <a href="#top" class="site-footer__top">back to top <span aria-hidden="true">↑</span></a>
+  </footer>
 
-<audio id="audioEl" preload="none"></audio>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
