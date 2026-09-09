@@ -1,85 +1,156 @@
-# Music-Displayer — Bishow Gyawali
+# Bishow's Code Sounds
 
-A small, static site for publishing code-created music (made with Strudel). This is a self-contained HTML/CSS/Vanilla JavaScript site that lists tracks, provides a persistent player, links to Strudel pages and external audio, and renders social links.
+> A personal music portfolio website for Bishow Gyawali — a cute, premium, monochrome home for music made with code.
 
-Live demo: open `index.html` in a browser or serve the site locally (see "How to run").
+This static site showcases two original tracks created with [Strudel](https://strudel.cc). It features a custom-built audio player, links to the live Strudel code for each track, and a minimal, sophisticated design that puts the music first.
 
-## Stack
-- Language(s): HTML, CSS, JavaScript (Vanilla)
-- Framework / runtime: Static site (no build step required)
-- Notable libraries/services: Strudel (used as an external live-coding environment), no JS dependencies
+The site is **self-contained** — just HTML, CSS, and vanilla JavaScript. No frameworks, no build step, no heavy libraries.
 
+---
 
-## What this site does
-- Presents a small collection of tracks with title, description, genre, year.
-- Renders a persistent audio player with play/pause, seek, volume, and auto-advance.
-- Shows per-track links to Strudel code and external listening pages.
-- Renders social links for the artist.
+## Features
 
-## How to run (quick)
-Easiest: open `index.html` in your browser (works for local testing, but for local audio files most browsers require serving over HTTP).
+- **Two-track editorial listing** – each track includes a title, description, genre, year, and a visual CSS-based "artwork" composition
+- **Persistent audio player** – play/pause, seek, volume, current time, and auto-advance to the next track
+- **Strudel integration** – each track links directly to its Strudel code page (the code itself is never displayed on the site)
+- **External listening links** – one-click access to the audio on Bandcamp, SoundCloud, or a CDN
+- **Social links** – Facebook, Instagram, YouTube, and GitHub (easily customisable)
+- **Responsive & accessible** – mobile-first, keyboard-navigable, with support for `prefers-reduced-motion`
 
-Recommended (serve from a local static server):
+---
 
-- Python 3:
-  - python -m http.server 8000
-  - open http://localhost:8000
+## How to run
 
-- Node (serve):
-  - npm install -g serve
-  - serve .
+1. Clone or download the repository
+2. Serve the site over HTTP (required for local audio files)
 
-- Or use any static hosting (GitHub Pages, Netlify, Vercel).
+**With Python 3:**
 
-## How to customize content
-All site content is driven by the `tracks` array and `socialLinks` object in `script.js`.
+```bash
+python -m http.server 8000
+```
 
-- Add or edit tracks:
-  - Open `script.js`.
-  - Edit entries in the `tracks` array. Each track object has:
-    - `title` (string)
-    - `description` (string)
-    - `genre` (string)
-    - `year` (string)
-    - `audioFile` (string) — path to a local audio file inside `Songs/` (e.g. `Songs/MyTrack.mp3`) or a relative/absolute URL
-    - `audioUrl` (string) — external listening link (Bandcamp, SoundCloud, CDN, etc.)
-    - `strudelUrl` (string) — link to the Strudel page with the track code
-  - To add more tracks, append new objects to the array.
+Then open `http://localhost:8000`
 
-- Add audio files:
-  - Put audio files in the `Songs/` directory.
-  - Update the `audioFile` property to point at the filename (relative to the site root).
-  - Note: For local audio files to play in browsers you must serve files via HTTP (see "How to run").
+**With Node.js:**
 
-- Update social links:
-  - Edit the `socialLinks` object in `script.js` to change or add profile links.
+```bash
+npx serve
+```
 
-- Site title, hero copy, About text:
-  - Edit `index.html` to change visible text such as the wordmark, hero subtitle, and the About section.
+**Or use any static server** (GitHub Pages, Netlify, Vercel, etc.)
 
-- Footer year:
-  - The copyright year is set dynamically by `script.js`. Edit `index.html` if you want to change wording.
+> **Important:** Opening `index.html` directly from the filesystem (`file://`) will **not** play local audio files due to browser security restrictions. Always serve the site over HTTP.
+
+---
+
+## Tracks
+
+The site currently includes two tracks. All track data is stored in the `tracks` array inside `script.js`.
+
+| # | Title (placeholder) | Genre | Year | Audio file |
+|---|---------------------|-------|------|------------|
+| 1 | TRACK TITLE ONE | Drum | 2026 | `Songs/First-Song.wav` |
+| 2 | TRACK TITLE TWO | Clam | 2026 | `Songs/Second-Song.wav` |
+
+Each track also has:
+- An **external audio URL** (for listening elsewhere)
+- A **Strudel URL** (opens the code in a new tab)
+
+> **Note:** The song titles, descriptions, and genre labels are **placeholders** – they are kept easy to change in the code.
+
+---
+
+## How to customise
+
+All site content is driven by a few variables in `script.js`.
+
+### Add or edit tracks
+
+Open `script.js` and locate the `tracks` array. Each object has these properties:
+
+```javascript
+{
+  title: "Your title",              // string
+  description: "A short blurb",     // string
+  genre: "Genre",                   // string
+  year: "2026",                     // string
+  audioFile: "Songs/YourFile.wav",  // path (relative to site root)
+  audioUrl: "https://...",          // external listening link
+  strudelUrl: "https://strudel.cc/#..." // link to Strudel code
+}
+```
+
+To add a new track, append a new object to the array. The player will automatically display it.
+
+### Update social links
+
+In `script.js`, find the `socialLinks` object:
+
+```javascript
+const socialLinks = {
+  facebook: "https://www.facebook.com/bishwo.gyawali.2025",
+  instagram: "https://www.instagram.com/bishow_gyawali/",
+  youtube: "https://www.youtube.com/@pramiskunwar",
+  github: "https://github.com/VritoX098"
+};
+```
+
+Edit the URLs as needed.
+
+### Change the hero text or About copy
+
+Open `index.html` and look for the corresponding sections. The hero subtitle, About paragraph, and footer are all written directly in the HTML.
+
+### Modify the visual design
+
+The design system lives in `style.css` using **CSS custom properties** (variables) near the top of the file. Change colours, spacing, or typography there.
+
+---
 
 ## Deployment
-- GitHub Pages:
-  - Push the repository to GitHub.
-  - In repository Settings → Pages, set the source to the `main` branch (or `gh-pages` branch) and choose the root folder.
-- Netlify / Vercel:
-  - Connect the repo and deploy as a static site — no build step required.
 
-## Accessibility & behavior notes
-- The player uses a single shared `<audio>` element and updates UI from native audio events.
-- There are focus-visible outlines and a "skip to content" link for keyboard users.
-- The track reveal animation respects `prefers-reduced-motion`.
+### GitHub Pages
+
+1. Push the repository to GitHub
+2. Go to Settings → Pages
+3. Set the source to the `main` branch (or `gh-pages`) and the root folder
+
+### Netlify / Vercel
+
+Simply connect the repository and deploy as a static site – no build command needed.
+
+---
+
+## Accessibility & Behaviour
+
+- A single `<audio>` element powers the player; the UI reacts to native audio events
+- Focus-visible outlines are provided for keyboard users
+- A "skip to content" link is available at the top of the page
+- The track reveal animation respects `prefers-reduced-motion`
+- ARIA labels are used on interactive controls
+
+---
 
 ## Troubleshooting
-- If local audio doesn’t play when opening `index.html` directly, run a simple server (see "How to run") — most browsers block file:// audio for cross-origin/security reasons.
-- If autoplay is blocked, user interaction (play button, selecting a track) will enable playback.
+
+| Issue | Solution |
+|-------|----------|
+| Local audio doesn't play when opening `index.html` directly | Serve the site over HTTP (see "How to run") |
+| Autoplay is blocked by the browser | User interaction (clicking Play or selecting a track) will start playback |
+| Changes to `script.js` don't appear | Clear your browser cache or do a hard refresh |
+
+---
 
 ## Contributing
-- Fixes, improvements and content updates are welcome. For code changes please open an issue or PR.
-- If you want me to add this README directly to the repository, I can commit it for you.
 
-## Credits & license
-- Built for Bishow Gyawali. Tracks are authored/performed with Strudel (https://strudel.cc).
-- No license file is included in this repo. Add a LICENSE file if you want to clarify reuse terms.
+Fixes, improvements, and content updates are welcome. Please open an issue or pull request for any code changes.
+
+---
+
+## Credits & License
+
+Built for **Bishow Gyawali** – music created with [Strudel](https://strudel.cc).
+
+This project is provided as-is. No license file is included; add one if you wish to clarify reuse terms.
+```
